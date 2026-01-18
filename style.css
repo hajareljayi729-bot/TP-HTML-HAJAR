@@ -1,0 +1,169 @@
+/* PALETTE DE COULEURS */
+:root {
+    --ganache: #312521; /* Chocolat sombre riche */
+    --nantucket-breeze: #8ba8b7; /* Bleu-gris côtier */
+    --country-air: #d9e9f0; /* Bleu ciel léger */
+    --white-foam: #f8fafc;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--ganache);
+    /* Consigne : Body en dégradé léger (Country Air vers Nantucket) */
+    background: linear-gradient(180deg, var(--country-air) 0%, #ffffff 100%);
+    background-attachment: fixed;
+    line-height: 1.7;
+}
+
+/* HEADER : Ganache dégradé */
+header {
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Dégradé Ganache vers un brun plus chaud */
+    background: linear-gradient(135deg, var(--ganache) 0%, #4b3621 100%);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.header-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.profil-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 4px solid var(--nantucket-breeze);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* NAVIGATION HORIZONTALE */
+nav {
+    background: var(--nantucket-breeze);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none; /* Pas de puces */
+    display: flex; /* Horizontal */
+    justify-content: center;
+    padding: 18px 0;
+    margin: 0;
+}
+
+nav a {
+    color: var(--ganache);
+    text-decoration: none; /* Pas souligné */
+    padding: 10px 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover { color: white; background: rgba(0,0,0,0.1); border-radius: 5px; }
+
+/* MISE EN PAGE VERTICALE */
+.vertical-layout {
+    display: flex;
+    flex-direction: column; /* Aligne les sections verticalement */
+    align-items: center;
+    padding: 80px 20px;
+    gap: 100px;
+}
+
+.content-box { width: 100%; max-width: 900px; }
+
+.glass-article {
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid var(--nantucket-breeze);
+    padding: 40px;
+    border-radius: 25px; /* Coins arrondis */
+    position: relative;
+    box-shadow: 0 15px 35px rgba(139, 168, 183, 0.2);
+}
+
+.category-tag {
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    background: var(--ganache);
+    color: white;
+    padding: 4px 15px;
+    border-radius: 10px;
+    font-size: 0.8em;
+}
+
+/* TABLEAU */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+th { background: var(--ganache); color: white; padding: 20px; text-align: left; }
+td { padding: 15px; border-bottom: 1px solid var(--country-air); }
+
+/* POSITION FIXE : QR CODE */
+.qr-fixed {
+    position: fixed; /* Propriété Position */
+    bottom: 30px;
+    right: 30px;
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--ganache);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 100;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.qr-fixed img { width: 80px; margin-bottom: 5px; }
+
+/* BOUTON EMAIL */
+.btn-email {
+    display: inline-block;
+    padding: 18px 45px;
+    background: var(--nantucket-breeze);
+    color: var(--ganache);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(139, 168, 183, 0.4);
+}
+
+/* FOOTER */
+footer {
+    background: var(--country-air);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.ascii { color: var(--nantucket-breeze); font-size: 12px; margin-top: 30px; }
+
+/* Style pour l'ASCII Art de la consigne */
+#ascii-hajar {
+    display: block;
+    font-family: 'Courier New', monospace; /* Force une police alignée */
+    font-size: 12px;
+    line-height: 1.2;
+    color: var(--nantucket-breeze);
+    text-align: center;
+    background: transparent;
+    border: none;
+    padding: 20px;
+}
+
+/* Centrage du bloc pre */
+pre {
+    display: flex;
+    justify-content: center;
+}

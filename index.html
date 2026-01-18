@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Le Génie du Hasard - Palette Ganache & Breeze</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Consigne : Le h1 doit avoir un ombrage */
+        h1 { text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        
+        /* Consigne : ID pour formatage spécial du copyright */
+        #copyright-style {
+            color: #4b3621; /* Rappel Ganache */
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="top">
+        <div class="header-horizontal">
+            <img src="téléchargement.jpg" alt="Photo de profil" class="profil-circle">
+            
+            <h1 style="background: rgba(139, 168, 183, 0.2); padding: 30px 60px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); color: #ffffff;">
+                Le Génie du Hasard
+            </h1>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">L'Origine</a></li>
+            <li><a href="#penicilline">La Pénicilline</a></li>
+            <li><a href="#postit">Le Post-it</a></li>
+            <li><a href="#microondes">Le Micro-ondes</a></li>
+            <li><a href="#tableau">Tableau</a></li>
+        </ul>
+    </nav>
+
+    <div class="qr-fixed">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://github.com/votre-compte" alt="QR Code">
+        <p>GITHUB</p>
+    </div>
+
+    <main class="vertical-layout">
+        
+        <section id="accueil" class="content-box">
+            <h2>L'Éveil par l'Inattendu</h2>
+            <p>La science progresse souvent par des chemins détournés. Ce site célèbre la <strong>sérendipité</strong> : cette capacité de découvrir des solutions révolutionnaires là où l'on attendait un échec ou un simple accident de laboratoire.</p>
+        </section>
+
+        <section id="penicilline" class="content-box">
+            <article class="glass-article">
+                <div class="category-tag">Médecine</div>
+                <h3> La Pénicilline : Le Champignon Miraculeux</h3>
+                <p><strong>L'Histoire :</strong> En septembre 1928, le biologiste <strong>Alexander Fleming</strong> étudie les staphylocoques dorés. Avant de s'absenter, il oublie de nettoyer ses boîtes de culture, les laissant empilées sur sa paillasse.</p>
+                <p><strong>L'Accident :</strong> À son retour, il découvre qu'une moisissure rare, le <em>Penicillium notatum</em>, a contaminé une boîte. Autour de ce champignon, les bactéries ont été totalement dissoutes. Fleming comprend que la moisissure sécrète une substance antibactérienne.</p>
+                <p><strong>L'Impact :</strong> Stabilisée par Florey et Chain en 1941, la Pénicilline devient le premier antibiotique de masse, sauvant des millions de vies, notamment durant la 2nde Guerre mondiale.</p>
+            </article>
+        </section>
+
+        <section id="postit" class="content-box">
+            <article class="glass-article">
+                <div class="category-tag">Bureau</div>
+                <h3> Le Post-it : La Colle "Ratée"</h3>
+                <p><strong>L'Échec :</strong> En 1968, <strong>Spencer Silver</strong> (chercheur chez 3M) tente de créer une colle ultra-puissante pour l'aérospatiale. Il échoue et obtient une colle qui adhère mais s'enlève sans laisser de traces.</p>
+                <p><strong>Le Déclic :</strong> C'est <strong>Arthur Fry</strong>, choriste, qui a l'idée d'utiliser cette colle pour ses marque-pages de partitions en 1974. La couleur jaune iconique est due à un pur hasard : le laboratoire d'à côté n'avait que des chutes de papier jaune.</p>
+                <p><strong>L'Impact :</strong> Plus de 50 milliards de Post-it sont désormais produits chaque année, prouvant qu'un échec technique peut devenir un standard mondial.</p>
+            </article>
+        </section>
+
+        <section id="microondes" class="content-box">
+            <article class="glass-article">
+                <div class="category-tag">Cuisine</div>
+                <h3>Le Micro-ondes : Le Radar Cuisinier</h3>
+                <p><strong>Le Rayonnement :</strong> En 1945, l'ingénieur <strong>Percy Spencer</strong> travaille sur des radars militaires (magnétrons). En passant devant un tube actif, il sent une chaleur étrange dans sa poche.</p>
+                <p><strong>L'Accident :</strong> Sa barre de chocolat a totalement fondu. Intrigué, il teste des grains de maïs qui éclatent en pop-corn, puis un œuf qui explose sous l'effet de la pression moléculaire.</p>
+                <p><strong>L'Impact :</strong> Le premier modèle, le <em>Radarange</em>, mesurait 1m80. Sa miniaturisation a permis de transformer radicalement nos habitudes alimentaires quotidiennes.</p>
+            </article>
+        </section>
+
+        <section id="tableau" class="table-area">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Invention</th>
+                        <th>Inventeur</th>
+                        <th>Année</th>
+                        <th>L'Erreur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Pénicilline</td><td>A. Fleming</td><td>1928</td><td>Oubli de nettoyage</td></tr>
+                    <tr><td>Post-it</td><td>S. Silver</td><td>1968</td><td>Adhésif trop faible</td></tr>
+                    <tr><td>Micro-ondes</td><td>P. Spencer</td><td>1945</td><td>Chocolat fondu</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <aside id="contact">
+            <a href="mailto:eljayihaj25@gmail.com" class="btn-email">Me contacter par E-mail</a>
+        </aside>
+        <section style="text-align: center; margin-top: 50px;">
+            <a href="#top" class="btn-email" style="background-color: var(--ganache); color: white; border: 2px solid var(--nantucket-breeze);">
+                ↑ Retour en haut
+            </a>
+        </section>
+
+    </main>
+
+    <footer>
+        <p id="copyright-style">© 2026 - HAJAR EL JAYI</p>
+        </main>
+
+    <div style="text-align: center; padding-bottom: 40px;">
+        <a href="#top" class="btn-email" style="background-color: var(--ganache); color: white; border: 2px solid var(--nantucket-breeze); text-transform: uppercase;">
+            ↑ Retour en haut
+        </a>
+    </div>
+
+    <footer>
+        <pre class="ascii-art">
+             _    _             _            _____  
+            | |  | |   /\      | |    /\    |  __ \ 
+            | |__| |  /  \     | |   /  \   | |__) |
+            |  __  | / /\ \    | |  / /\ \  |  _  / 
+            | |  | |/ ____ \ __| | / ____ \ | | \ \ 
+              |_|  |_/_/    \_\_ _ //_/    \_\| |  \ \  
+        </pre>
+        
+        <p id="copyright-style">© 2026 - HAJAR EL JAYI</p>
+    </footer>
+
+</body>
+</html>
+        
+    </footer>
+
+</body>
+</html>
