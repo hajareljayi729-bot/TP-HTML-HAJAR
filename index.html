@@ -2,115 +2,575 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Le Génie du Hasard - Palette Ganache & Breeze</title>
-    <link rel="stylesheet" href="style.css">
-
-    <style>
-      h1 { 
-        
-         text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9), 
-                      0px 0px 20px rgba(255, 255, 255, 0.6); 
-         color: #ffffff;
-         font-weight: bold;
-      }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Génie du Hasard - Hajar El Jayi</title>
     
-      #copyright-style {
-        color: #4b3621;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-     }
-</style>
+    <!-- CSS EXTERNE - Lien vers le fichier styles.css -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- CSS INTERNE - Styles spécifiques à cette page -->
+    <style>
         
+        body { font-size: 14px; }
+        .pillars-grid, .conclusion-lessons {
+            display: flex !important;
+            flex-flow: row nowrap !important;
+            justify-content: space-between;
+            gap: 15px !important;
+        }
+        .pillar-card, .lesson-card {
+            flex: 1;
+            width: 33%;
+            min-width: 0;
+        }
+        .content-box { max-width: 800px !important; }
+        .vertical-layout { gap: 60px !important; padding: 50px 20px !important; }
+        .intro-section { padding: 40px 30px !important; }
+        .glass-article { padding: 30px !important; margin-bottom: 40px !important; }
+        h2 { font-size: 1.9em !important; }
+        h3 { font-size: 1.4em !important; }
+        
+        @keyframes glowPulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(212, 175, 55, 0.3),
+                           0 0 40px rgba(139, 168, 183, 0.2); 
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(212, 175, 55, 0.6),
+                           0 0 60px rgba(139, 168, 183, 0.4); 
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotateIn {
+            from {
+                opacity: 0;
+                transform: rotate(-180deg) scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(139, 168, 183, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.06) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(49, 37, 33, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+            animation: particleFloat 25s ease-in-out infinite;
+        }
+
+        @keyframes particleFloat {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(50px, -50px) rotate(120deg); }
+            66% { transform: translate(-30px, 30px) rotate(240deg); }
+        }
+
+        
+
+        
+        .header-horizontal {
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        
+        .profil-circle {
+            animation: glowPulse 4s ease-in-out infinite, float 6s ease-in-out infinite;
+        }
+
+        .profil-circle:hover {
+            transform: scale(1.2) rotate(360deg);
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        
+        h1:hover {
+            text-shadow: 
+                0 0 10px rgba(255, 255, 255, 1),
+                0 0 20px rgba(212, 175, 55, 0.8),
+                0 0 30px rgba(212, 175, 55, 0.6),
+                0 0 40px rgba(139, 168, 183, 0.4);
+            transform: scale(1.05);
+        }
+
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--accent-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 80%;
+        }
+
+        
+        .glass-article {
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .glass-article:nth-child(1) { animation-delay: 0.1s; }
+        .glass-article:nth-child(2) { animation-delay: 0.2s; }
+        .glass-article:nth-child(3) { animation-delay: 0.3s; }
+
+        
+        .pillar-card {
+            animation: rotateIn 0.6s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .pillar-card:nth-child(1) { animation-delay: 0.2s; }
+        .pillar-card:nth-child(2) { animation-delay: 0.4s; }
+        .pillar-card:nth-child(3) { animation-delay: 0.6s; }
+
+        
+        .comparison-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table tbody tr:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(139, 168, 183, 0.3);
+        }
+
+        
+        .qr-fixed {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .qr-fixed:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 50px rgba(139, 168, 183, 0.4);
+        }
+
+        
+        .btn-email {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-email::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn-email:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        
+        footer {
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        .ascii-art {
+            transition: all 0.3s ease;
+        }
+
+        .ascii-art:hover {
+            transform: scale(1.05);
+            color: var(--accent-gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        
+        .intro-section {
+            transition: transform 0.3s ease;
+        }
+
+        .intro-section:hover {
+            transform: translateY(-5px);
+        }
+
+        
+        .category-tag {
+            animation: slideInFromRight 0.5s ease-out;
+            transition: all 0.3s ease;
+        }
+
+        .category-tag:hover {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 5px 15px rgba(49, 37, 33, 0.4);
+        }
+
+        
+        .lesson-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+    </style>
 </head>
 <body>
 
+    
     <header id="top">
         <div class="header-horizontal">
-            <img src="hajar.jpg.jpeg" alt="Photo de profil" class="profil-circle">
+           
+            <img src="hajar.jpg.jpeg" 
+                 alt="Photo de Hajar El Jayi" 
+                 class="profil-circle"
+                 style="cursor: pointer; filter: brightness(1.05);">
             
-            <h1 style="background: rgba(139, 168, 183, 0.2); padding: 30px 60px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px); color: #ffffff;">
-                Le Génie du Hasard
-            </h1>
+            
+            <h1> Le Génie du Hasard </h1>
         </div>
     </header>
 
+    
     <nav>
         <ul>
-            <li><a href="#accueil">L'Origine</a></li>
-            <li><a href="#penicilline">La Pénicilline</a></li>
-            <li><a href="#postit">Le Post-it</a></li>
-            <li><a href="#microondes">Le Micro-ondes</a></li>
-            <li><a href="#tableau">Tableau</a></li>
+            <li><a href="#introduction"> Introduction</a></li>
+            <li><a href="#concept"> La Sérendipité</a></li>
+            <li><a href="#exemples"> Exemples</a></li>
+            <li><a href="#tableau-complet"> Tableau</a></li>
+            <li><a href="#innovation"> Innovation</a></li>
+            <li><a href="#conclusion"> Conclusion</a></li>
         </ul>
     </nav>
 
+    
     <div class="qr-fixed">
         <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://hajareljayi729-bot.github.io/TP-HTML-HAJAR/" alt="Mon QR Code">
         <p>GITHUB</p>
     </div>
 
+    
     <main class="vertical-layout">
         
-        <section id="accueil" class="content-box">
-            <h2>L'Éveil par l'Inattendu</h2>
-            <p>La science progresse souvent par des chemins détournés. Ce site célèbre la <strong>sérendipité</strong> : cette capacité de découvrir des solutions révolutionnaires là où l'on attendait un échec ou un simple accident de laboratoire.</p>
+        
+        <section id="introduction" class="content-box">
+            <div class="intro-section">
+                <h2> Quand l'erreur devient un succès</h2>
+                <p>Dans notre vie de tous les jours, nous avons l'habitude de voir l'erreur comme une faute ou un échec qu'il faut éviter. Pourtant, l'histoire des grandes découvertes nous prouve exactement le contraire : <strong>certaines des plus grandes inventions de l'humanité sont nées de véritables "ratés".</strong></p>
+                
+                <p>C'est ce qu'on appelle la <strong>sérendipité</strong> : le fait de trouver par hasard quelque chose de génial alors que l'on cherchait tout autre chose. Que ce soit une moisissure oubliée sur une table ou une barre de chocolat qui fond dans une poche, ces accidents auraient pu finir à la poubelle. Mais grâce à la curiosité de chercheurs attentifs, ces erreurs ont changé le monde.</p>
+                
+                <p>Nous allons découvrir comment le "génie du hasard" a transformé des échecs en réussites incroyables à travers des exemples célèbres comme la pénicilline, le Post-it ou encore le four à micro-ondes.</p>
+            </div>
         </section>
 
-        <section id="penicilline" class="content-box">
+        
+        <section id="concept" class="content-box">
             <article class="glass-article">
-                <div class="category-tag">Médecine</div>
+                <div class="category-tag"> Concept</div>
+                <h2 style="margin-bottom: 30px; color: var(--ganache);">Le Concept de Sérendipité</h2>
+                
+                <p style="font-size: 1.1em; margin-bottom: 20px;">Le terme <strong>sérendipité</strong> (de l'anglais <em>serendipity</em>) a été forgé par Horace Walpole en 1754. Il désigne la capacité de découvrir, par hasard et par sagacité, des choses que l'on ne cherchait pas.</p>
+
+                <h3 style="color: var(--ganache); margin-top: 40px; margin-bottom: 25px;">Les trois piliers d'une "erreur réussie" :</h3>
+                
+                <div class="pillars-grid">
+                    <div class="pillar-card">
+                        <div class="pillar-number">1️⃣</div>
+                        <h4>L'Anomalie</h4>
+                        <p>Un résultat qui s'écarte de la norme prévue (ex: une boîte de Pétri qui moisit).</p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-number">2️⃣</div>
+                        <h4>L'Observation Sagace</h4>
+                        <p>La capacité de l'individu à ne pas ignorer l'anomalie, mais à l'analyser.</p>
+                    </div>
+                    
+                    <div class="pillar-card">
+                        <div class="pillar-number">3️⃣</div>
+                        <h4>Le Détournement</h4>
+                        <p>L'aptitude à imaginer un nouvel usage pour ce résultat "raté".</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        
+        <section id="exemples" class="content-box">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5em; color: var(--ganache);"> Les Découvertes Fortuites</h2>
+
+            
+            <article class="glass-article" style="margin-bottom: 60px;">
+                <div class="category-tag"> Médecine</div>
                 <h3> La Pénicilline : Le Champignon Miraculeux</h3>
-                <p><strong>L'Histoire :</strong> En septembre 1928, le biologiste <strong>Alexander Fleming</strong> étudie les staphylocoques dorés. Avant de s'absenter, il oublie de nettoyer ses boîtes de culture, les laissant empilées sur sa paillasse.</p>
-                <p><strong>L'Accident :</strong> À son retour, il découvre qu'une moisissure rare, le <em>Penicillium notatum</em>, a contaminé une boîte. Autour de ce champignon, les bactéries ont été totalement dissoutes. Fleming comprend que la moisissure sécrète une substance antibactérienne.</p>
-                <p><strong>L'Impact :</strong> Stabilisée par Florey et Chain en 1941, la Pénicilline devient le premier antibiotique de masse, sauvant des millions de vies, notamment durant la 2nde Guerre mondiale.</p>
+                
+                <p><strong>Le Contexte :</strong> Alexander Fleming, chercheur à l'hôpital St. Mary de Londres, étudie les staphylocoques, des bactéries responsables de nombreuses infections mortelles à l'époque.</p>
+                
+                <p><strong>L'Erreur :</strong> En août 1928, avant de partir en vacances, Fleming laisse sur sa paillasse plusieurs boîtes de Pétri contenant des cultures de bactéries, au lieu de les placer au réfrigérateur.</p>
+                
+                <p><strong>Le Génie :</strong> À son retour, il remarque qu'une moisissure a tué les bactéries autour d'elle. Au lieu de tout jeter, il identifie le champignon <em>Penicillium notatum</em> et découvre son pouvoir antibactérien.</p>
+                
+                <p><strong>Impact :</strong> Naissance des antibiotiques et de la médecine moderne. Des millions de vies sauvées depuis 1940.</p>
             </article>
-        </section>
 
-        <section id="postit" class="content-box">
+            
+            <article class="glass-article" style="margin-bottom: 60px;">
+                <div class="category-tag"> Bureau</div>
+                <h3> Le Post-it : La Colle qui ne Collait pas</h3>
+                
+                <p><strong>Le Contexte :</strong> Spencer Silver, chimiste chez 3M, cherche à développer une colle ultra-forte pour l'industrie aéronautique.</p>
+                
+                <p><strong>L'Erreur :</strong> Il obtient un adhésif qui colle très faiblement et s'enlève sans laisser de trace. Un échec total pour l'aviation !</p>
+                
+                <p><strong>Le Génie :</strong> Son collègue Art Fry utilise cette "mauvaise colle" pour créer des marque-pages qui tiennent sans abîmer les livres.</p>
+                
+                <p><strong>Impact :</strong> Plus de 50 milliards de Post-it vendus chaque année dans le monde entier.</p>
+            </article>
+
             <article class="glass-article">
-                <div class="category-tag">Bureau</div>
-                <h3> Le Post-it : La Colle "Ratée"</h3>
-                <p><strong>L'Échec :</strong> En 1968, <strong>Spencer Silver</strong> (chercheur chez 3M) tente de créer une colle ultra-puissante pour l'aérospatiale. Il échoue et obtient une colle qui adhère mais s'enlève sans laisser de traces.</p>
-                <p><strong>Le Déclic :</strong> C'est <strong>Arthur Fry</strong>, choriste, qui a l'idée d'utiliser cette colle pour ses marque-pages de partitions en 1974. La couleur jaune iconique est due à un pur hasard : le laboratoire d'à côté n'avait que des chutes de papier jaune.</p>
-                <p><strong>L'Impact :</strong> Plus de 50 milliards de Post-it sont désormais produits chaque année, prouvant qu'un échec technique peut devenir un standard mondial.</p>
+                <div class="category-tag"> Cuisine</div>
+                <h3> Le Micro-ondes : Le Radar Cuisinier</h3>
+                
+                <p><strong>Le Contexte :</strong> Percy Spencer travaille sur des magnétrons pour améliorer les radars militaires pendant la Seconde Guerre mondiale.</p>
+                
+                <p><strong>L'Erreur :</strong> Une barre de chocolat fond dans sa poche près d'un magnétron en marche, sans source de chaleur directe.</p>
+                
+                <p><strong>Le Génie :</strong> Il teste sur du maïs (popcorn) et un œuf (qui explose). Il comprend que les micro-ondes agitent les molécules d'eau des aliments.</p>
+                
+                <p><strong>Impact :</strong> Révolution de la cuisson domestique et de la restauration rapide mondiale.</p>
+            </article>
+            <article class="glass-article" style="margin-bottom: 60px;">
+                <div class="category-tag"> Médecine</div>
+                <h3> Le Téflon : Le gaz qui devient solide</h3>
+                
+                <p><strong>Le Contexte :</strong> Plunkett travaille pour DuPont sur de nouveaux gaz réfrigérants. Il stocke du gaz tétrafluoroéthylène dans des bouteilles métalliques pressurisées.</p>
+                
+                <p><strong>L'Erreur :</strong> : En ouvrant une bouteille, aucun gaz ne sort, alors que son poids indique qu'elle est pleine.</p>
+                
+                <p><strong>Le Génie :</strong> Au lieu de renvoyer la bouteille au rebut, il la scie en deux. Il découvre une poudre blanche cireuse et glissante. Ce gaz s'est polymérisé spontanément à cause du fer de la bouteille agissant comme catalyseur.</p>
+                
+                <p><strong>Impact :</strong> : La substance s'avère être la plus glissante au monde, résistante à la chaleur et aux acides. Utilisé d'abord pour le projet Manhattan (bombe atomique), il finit par recouvrir nos poêles à frire.</p>
+            </article>
+
+            <article class="glass-article" style="margin-bottom: 60px;">
+                <div class="category-tag"> Médecine</div>
+                <h3> La Mauvéine : La couleur de l'échec</h3>
+                
+                <p><strong>Le Contexte :</strong> À 18 ans, William Perkin tente de synthétiser la quinine (médicament contre le paludisme) à partir de goudron de houille.</p>
+                
+                <p><strong>L'Erreur :</strong> L'expérience rate complètement. Au lieu d'obtenir une poudre blanche médicinale, il se retrouve avec une mélasse noirâtre et visqueuse dans son éprouvette.</p>
+                
+                <p><strong>Le Génie :</strong> En nettoyant son récipient à l'alcool, Perkin remarque que le résidu prend une teinte violette éclatante. Il réalise que cette substance colore les tissus de façon indélébile, ce que la nature n'accomplissait pas facilement à l'époque (le violet était très cher).</p>
+                
+                <p><strong>Impact :</strong> C'est le premier colorant synthétique de l'histoire, qui a démocratisé les couleurs dans la mode.</p>
+            </article>
+            <article class="glass-article" style="margin-bottom: 60px;">
+                <div class="category-tag"> Médecine</div>
+                <h3> Pacemaker : L'erreur de composant</h3>
+                
+                <p><strong>Le Contexte :</strong> Il assemble un circuit électronique pour un oscillateur de rythme cardiaque.</p>
+                
+                <p><strong>L'Erreur :</strong> : En fouillant dans sa boîte de composants, il installe par mégarde une résistance de 1 mégaohm au lieu de celle de 10 000 ohms prévue.</p>
+                
+                <p><strong>Le Génie :</strong> Le circuit se met à produire des impulsions électriques au lieu d'enregistrer des sons. Greatbatch réalise que le rythme de ces impulsions ressemble exactement à celui du cœur humain.</p>
+                
+                <p><strong>Impact :</strong> : Il comprend que ce petit appareil peut "piloter" un cœur défaillant. En 1960, le premier pacemaker est implanté avec succès, sauvant des millions de vies.</p>
             </article>
         </section>
 
-        <section id="microondes" class="content-box">
-            <article class="glass-article">
-                <div class="category-tag">Cuisine</div>
-                <h3>Le Micro-ondes : Le Radar Cuisinier</h3>
-                <p><strong>Le Rayonnement :</strong> En 1945, l'ingénieur <strong>Percy Spencer</strong> travaille sur des radars militaires (magnétrons). En passant devant un tube actif, il sent une chaleur étrange dans sa poche.</p>
-                <p><strong>L'Accident :</strong> Sa barre de chocolat a totalement fondu. Intrigué, il teste des grains de maïs qui éclatent en pop-corn, puis un œuf qui explose sous l'effet de la pression moléculaire.</p>
-                <p><strong>L'Impact :</strong> Le premier modèle, le <em>Radarange</em>, mesurait 1m80. Sa miniaturisation a permis de transformer radicalement nos habitudes alimentaires quotidiennes.</p>
-            </article>
-        </section>
-
-        <section id="tableau" class="table-area">
-            <table>
+        <section id="tableau-complet" class="content-box">
+            <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5em; color: var(--ganache);"> Tableau Comparatif des Découvertes</h2>
+            
+            <table class="comparison-table">
                 <thead>
                     <tr>
-                        <th>Invention</th>
-                        <th>Inventeur</th>
-                        <th>Année</th>
-                        <th>L'Erreur</th>
+                        <th> Invention</th>
+                        <th> Objectif Initial</th>
+                        <th> L'Erreur</th>
+                        <th> Le Pivot</th>
+                        <th> Impact</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr><td>Pénicilline</td><td>A. Fleming</td><td>1928</td><td>Oubli de nettoyage</td></tr>
-                    <tr><td>Post-it</td><td>S. Silver</td><td>1968</td><td>Adhésif trop faible</td></tr>
-                    <tr><td>Micro-ondes</td><td>P. Spencer</td><td>1945</td><td>Chocolat fondu</td></tr>
+                    <tr>
+                        <td><strong>Pénicilline (1928)</strong></td>
+                        <td>Étudier les staphylocoques pour trouver un antiseptique</td>
+                        <td>Boîte de Pétri contaminée par une moisissure suite à un oubli</td>
+                        <td>La moisissure tue les bactéries: "halo de mort"</td>
+                        <td>Naissance des antibiotiques, médecine moderne</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mauvéine (1856)</strong></td>
+                        <td>Synthétiser la quinine contre le paludisme</td>
+                        <td>Résidu noir et gluant au lieu d'une poudre blanche</td>
+                        <td>Le résidu devient violet intense et teint la soie</td>
+                        <td>Premier colorant synthétique, industrie chimique</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Micro-ondes (1945)</strong></td>
+                        <td>Améliorer les radars militaires (magnétrons)</td>
+                        <td>Chocolat qui fond dans la poche sans chaleur directe</td>
+                        <td>Les ondes agitent les molécules d'eau des aliments</td>
+                        <td>Révolution de la cuisson domestique rapide</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pacemaker (1956)</strong></td>
+                        <td>Enregistreur de rythmes cardiaques</td>
+                        <td>Résistance trop puissante installée par erreur</td>
+                        <td>Le circuit émet des impulsions comme un cœur</td>
+                        <td>Millions de vies prolongées avec le stimulateur</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Téflon (1938)</strong></td>
+                        <td>Créer un nouveau gaz réfrigérant non toxique</td>
+                        <td>Le gaz disparaît mais la bouteille reste lourde</td>
+                        <td>Découverte d'une poudre ultra-glissante</td>
+                        <td>Revêtement antiadhésif, isolation spatiale</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-it (1968)</strong></td>
+                        <td>Colle ultra-forte pour l'aéronautique</td>
+                        <td>Adhésif qui colle faiblement et s'enlève facilement</td>
+                        <td>Utilisé pour des marque-pages repositionnables</td>
+                        <td>Standard mondial de la communication de bureau</td>
+                    </tr>
                 </tbody>
             </table>
         </section>
 
-        <aside id="contact">
-            <a href="mailto:hajar.el-jayi@esi.ac.ma" class="btn-email">Me contacter par E-mail</a>
+        <section id="innovation" class="content-box">
+            <div class="innovation-reasons">
+                <h3> Pourquoi l'Innovation naît-elle de l'Erreur ?</h3>
+                
+                <div class="reason-item">
+                    <h4>1.  La rupture du cadre cognitif</h4>
+                    <p>L'innovation planifiée suit une ligne droite. L'erreur force à sortir du cadre ("Out of the box") et présente une solution à un problème que nous n'avions pas encore formulé.</p>
+                </div>
+                
+                <div class="reason-item">
+                    <h4>2.  La culture de l'expérimentation</h4>
+                    <p>Les entreprises comme Google ou 3M encouragent le "droit à l'erreur". Elles savent que sans tolérance de l'échec, on bride les probabilités de découvertes fortuites.</p>
+                </div>
+                
+                <div class="reason-item">
+                    <h4>3.  La structure de la découverte scientifique</h4>
+                    <p>Comme l'explique Thomas Kuhn, la science avance par l'accumulation d'anomalies que les théories actuelles n'expliquent pas, jusqu'à ce qu'un nouveau paradigme s'impose.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conclusion" class="content-box">
+            <div class="conclusion-box">
+                <h2> La leçon des erreurs géniales</h2>
+                
+                <p style="font-size: 1.2em; line-height: 1.9; margin-bottom: 30px;">L'histoire de ces inventions nous montre que l'erreur n'est pas la fin d'un projet, mais souvent le début d'une nouvelle opportunité. Si Fleming ou Spencer avaient simplement jeté leurs expériences "ratées", notre quotidien serait bien différent.</p>
+                
+                <div class="conclusion-lessons">
+                    <div class="lesson-card">
+                        <div class="lesson-number">1️⃣</div>
+                        <h4>L'échec est une source d'apprentissage</h4>
+                        <p>Une expérience qui échoue nous apporte quand même une information précieuse.</p>
+                    </div>
+                    
+                    <div class="lesson-card">
+                        <div class="lesson-number">2️⃣</div>
+                        <h4>L'importance de l'observation</h4>
+                        <p>Le hasard ne suffit pas; il faut être curieux pour se demander <em>pourquoi</em> les choses ont mal tourné.</p>
+                    </div>
+                    
+                    <div class="lesson-card">
+                        <div class="lesson-number">3️⃣</div>
+                        <h4>L'ouverture d'esprit</h4>
+                        <p>Il faut savoir abandonner son idée de départ pour accepter une découverte encore plus grande.</p>
+                    </div>
+                </div>
+                
+                <p style="font-size: 1.15em; margin-top: 40px; font-style: italic;">Le "génie du hasard" nous rappelle que pour réussir, il ne faut pas avoir peur de se tromper, car c'est au cœur de nos erreurs que se cachent les solutions de demain. 🌟</p>
+            </div>
+        </section>
+
+        <aside id="contact" style="margin-top: 60px;">
+            
+            <a href="mailto:hajar.el-jayi@esi.ac.ma" class="btn-email">
+                ✉️ Me contacter par E-mail
+            </a>
         </aside>
+        
+        
         <section style="text-align: center; margin-top: 50px;">
             <a href="#top" class="btn-email" style="background-color: var(--ganache); color: white; border: 2px solid var(--nantucket-breeze);">
-                ↑ Retour en haut
+                ⬆️ Retour en haut de la page
             </a>
         </section>
 
@@ -118,27 +578,19 @@
     
     <footer>
         <pre class="ascii-art">
-             _    _             _            _____  
-            | |  | |   /\      | |    /\    |  __ \ 
-            | |__| |  /  \     | |   /  \   | |__) |
-            |  __  | / /\ \    | |  / /\ \  |  _  / 
-            | |  | |/ ____ \ __| | / ____ \ | | \ \ 
-              |_|  |_/_/    \_\_ _ //_/    \_\| |  \ \  
+ _    _             _            _____  
+| |  | |   /\      | |    /\    |  __ \ 
+| |__| |  /  \     | |   /  \   | |__) |
+|  __  | / /\ \    | |  / /\ \  |  _  / 
+| |  | |/ ____ \ __| | / ____ \ | | \ \ 
+|_|  |_/_/    \_\___/_/    \_\|_|  \_\  
         </pre>
         
-        <p id="copyright-style">© 2026 - HAJAR EL JAYI</p>
+        <p id="copyright-style">© 2026 - HAJAR EL JAYI - Tous droits réservés</p>
+        <p style="margin-top: 15px; color: var(--ganache); font-size: 0.9em;">
+            École Supérieure d'Ingénierie | Travail Pratique HTML/CSS
+        </p>
     </footer>
 
 </body>
 </html>
-        
-
-
-
-
-
-
-
-
-
-
