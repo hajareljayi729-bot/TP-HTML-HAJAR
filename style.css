@@ -140,20 +140,21 @@ nav a:hover {
     display: flex; 
     flex-direction: column; 
     align-items: center;
-    padding: 100px 20px;
-    gap: 120px;
+    padding: 50px 20px;
+    gap: 60px;
 }
 
 .content-box { 
     width: 100%; 
-    max-width: 950px; 
+    max-width: 800px; 
 }
 
 
 .glass-article {
     background: rgba(255, 255, 255, 0.7);
     border: 2px solid var(--nantucket-breeze);
-    padding: 50px;
+    padding: 30px;
+    margin-bottom: 40px;
     border-radius: 30px; 
     position: relative;
     box-shadow: 0 20px 50px rgba(139, 168, 183, 0.25); 
@@ -183,7 +184,7 @@ nav a:hover {
 
 .intro-section {
     background: linear-gradient(135deg, rgba(139, 168, 183, 0.15) 0%, rgba(255,255,255,0.9) 100%);
-    padding: 70px 50px;
+    padding: 40px 30px;
     border-radius: 35px;
     border-left: 8px solid var(--nantucket-breeze);
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
@@ -192,7 +193,7 @@ nav a:hover {
 .intro-section h2 {
     color: var(--ganache);
     margin-bottom: 25px;
-    font-size: 2.5em;
+    font-size: 1.9em;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.1); 
 }
 
@@ -203,25 +204,37 @@ nav a:hover {
 }
 
 
-.pillars-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
-    margin-top: 50px;
+
+.pillars-grid, .conclusion-lessons {
+    display: grid !important;
+    
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 25px;
+    width: 100%;
+    margin-top: 40px;
+    align-items: stretch; 
 }
 
-.pillar-card {
+
+.pillar-card, 
+.lesson-card {
     background: white;
-    padding: 35px;
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(139, 168, 183, 0.2);
-    transition: transform 0.4s, box-shadow 0.4s;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(139, 168, 183, 0.15);
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
 }
 
-.pillar-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 50px rgba(139, 168, 183, 0.35);
+
+.pillar-card:hover, .lesson-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(139, 168, 183, 0.3);
 }
+
+
 
 .pillar-number {
     font-size: 3em;
@@ -285,7 +298,7 @@ nav a:hover {
 .innovation-reasons h3 {
     color: var(--ganache);
     margin-bottom: 40px;
-    font-size: 2em;
+    font-size: 1.4em;
     text-align: center;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.1);
 }
