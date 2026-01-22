@@ -140,12 +140,13 @@ nav a:hover {
 
 
 .qr-fixed {
-    position: fixed; 
-    bottom: 40px;
-    right: 40px;
-    background: white;
+    position: fixed !important; 
+    bottom: 40px !important;
+    right: 40px !important;  
+    left: auto !important; 
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(217,233,240,0.95));
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 25px;
     text-align: center;
     color: var(--ganache);
     box-shadow: 0 15px 50px rgba(139, 168, 183, 0.3);
@@ -153,13 +154,53 @@ nav a:hover {
     font-size: 0.75em;
     font-weight: bold;
     transition: all 0.4s ease;
+    border: 2px solid var(--accent-gold);
+    backdrop-filter: blur(10px);
+    animation: float 4s ease-in-out infinite;
+}
+.qr-fixed::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    background: linear-gradient(45deg, var(--accent-gold), var(--nantucket-breeze));
+    border-radius: 25px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.qr-fixed:hover::after {
+    opacity: 0.4;
+}
+
+.qr-fixed:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.3);
 }
 
 .qr-fixed img { 
     width: 90px; 
     margin-bottom: 8px;
-    border-radius: 10px;
+    border-radius: 15px;  
+    filter: contrast(1.1);
+    transition: all 0.3s ease;
 }
+
+.qr-fixed:hover img {
+    filter: contrast(1.2) brightness(1.05);
+}
+
+.qr-fixed p {
+    margin-top: 10px;
+    color: var(--ganache);
+    font-weight: 900;
+    letter-spacing: 3px;
+    font-size: 1em;
+}
+
 
 
 .vertical-layout {
@@ -479,8 +520,11 @@ footer {
     }
 
     .qr-fixed {
-        bottom: 20px;
-        right: 20px;
-        padding: 15px;
+    bottom: 20px !important;
+    right: 20px !important;  
+    left: auto !important;
+    padding: 15px;
     }
+    
 }
+
