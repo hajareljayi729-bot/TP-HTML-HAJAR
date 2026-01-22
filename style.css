@@ -24,7 +24,7 @@ body {
 
 
 header {
-    height: 300px;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,8 +79,8 @@ h1 {
 
 
 .profil-circle {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     border: 6px solid var(--accent-gold);
     box-shadow: 0 20px 60px rgba(212, 175, 55, 0.5),
@@ -91,7 +91,7 @@ h1 {
 h1 { 
     z-index: 2;
     color: #ffffff;
-    font-size: 3.2em;
+    font-size: 2.8em;
     background: rgba(49, 37, 33, 0.4); 
     padding: 35px 70px;
     border-radius: 20px; [cite_start]
@@ -525,8 +525,6 @@ footer {
     left: auto !important;
     padding: 15px;
     }
- 
+    
 }
-
-
 
