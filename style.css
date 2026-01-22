@@ -110,7 +110,7 @@ nav {
     background: linear-gradient(90deg, #5d7a8a 0%, var(--nantucket-breeze) 100%);
     position: sticky;
     top: 0;
-    z-index: 998 !important;
+    z-index: 998;
     border-top: 2px solid var(--accent-gold); 
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
@@ -525,6 +525,6 @@ footer {
     left: auto !important;
     padding: 15px;
     }
+ 
 }
-
 
