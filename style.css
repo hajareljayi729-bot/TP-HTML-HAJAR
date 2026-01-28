@@ -73,6 +73,9 @@ header::before {
                 0 0 0 15px rgba(139, 168, 183, 0.2);
     object-fit: cover;
     transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: radial-gradient(circle, var(--nantucket-breeze) 0%, #4a5d68 40%, var(--ganache) 100%);
+    padding: 10px;
+    object-fit: contain;
 }
 h1 { 
     z-index: 2;
